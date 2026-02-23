@@ -2,16 +2,27 @@
 using namespace std;
 
 int main() {
-    for (int fila = 1; fila <= 4; fila++) {
-        for (int col = 1; col <= 6; col++) {
-            cout << "*";
+    int filas, cols;
+
+    cout << "Ingrese el numero de filas: ";
+    cin >> filas;
+    cout << "Ingrese el numero de columnas: ";
+    cin >> cols;
+
+    // Dibujar rectángulo hueco (solo borde)
+    for (int i = 1; i <= filas; i++) {
+        for (int j = 1; j <= cols; j++) {
+            if (i == 1 || i == filas || j == 1 || j == cols) {
+                cout << "* ";
+            } else {
+                cout << "  ";  // Espacio interior
+            }
         }
         cout << endl;
     }
 
     return 0;
 }
-// Este programa imprime un rectángulo de asteriscos de 4 filas y 6 columnas utilizando bucles anidados.
-// El bucle externo itera sobre las filas, mientras que el bucle interno itera sobre las columnas.
-// En cada iteración del bucle interno, se imprime un asterisco.
-// Al finalizar el bucle interno, se imprime un salto de línea para comenzar una nueva fila
+// Este programa dibuja un rectángulo HUECO de asteriscos.
+// Solo imprime asteriscos en los bordes (primera/última fila y primera/última columna).
+// El interior queda vacío, usando una condición if dentro de los bucles anidados.

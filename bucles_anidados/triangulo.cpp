@@ -2,8 +2,23 @@
 using namespace std;
 
 int main() {
-    for (int i = 1; i <= 5; i++) {
+    int n;
+
+    cout << "Ingrese la altura del triangulo: ";
+    cin >> n;
+
+    // Triángulo centrado con números
+    for (int i = 1; i <= n; i++) {
+        // Espacios para centrar
+        for (int j = 1; j <= n - i; j++) {
+            cout << "  ";
+        }
+        // Números ascendentes
         for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+        // Números descendentes (espejo)
+        for (int j = i - 1; j >= 1; j--) {
             cout << j << " ";
         }
         cout << endl;
@@ -11,7 +26,10 @@ int main() {
 
     return 0;
 }
-// Este programa imprime un triángulo de números utilizando bucles anidados.
-// El bucle externo itera sobre las filas del triángulo, mientras que el bucle interno itera desde 1 hasta el número de la fila actual.
-// En cada iteración del bucle interno, se imprime el valor de j, que representa el número en esa posición del triángulo.
-// Al finalizar el bucle interno, se imprime un salto de línea para comenzar una nueva fila.
+// Este programa dibuja un triángulo centrado con números en forma de pirámide.
+// Cada fila muestra números que suben hasta el número de fila y luego bajan.
+// Ejemplo con n=4:
+//       1
+//     1 2 1
+//   1 2 3 2 1
+// 1 2 3 4 3 2 1

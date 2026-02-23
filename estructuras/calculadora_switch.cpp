@@ -1,7 +1,6 @@
-// Es una estructura de control condicional que permite
-// ejecutar diferentes bloques de código basados en el valor
-// de una expresión entera o de enumeración.
-// Ejemplo: Calculadora que realiza operaciones según el operador ingresado.
+// Calculadora básica usando switch con entrada del usuario.
+// Combina condicionales con operadores y validación de errores
+// (como la división entre cero).
 
 #include <iostream>
 using namespace std;
@@ -10,11 +9,13 @@ int main() {
     double num1, num2;
     char operador;
 
-    cout << "Ingrese primer numero: ";
+    cout << "Ingrese el primer numero: ";
     cin >> num1;
-    cout << "Ingrese operador (+, -, *, /): ";
+
+    cout << "Ingrese el operador (+, -, *, /): ";
     cin >> operador;
-    cout << "Ingrese segundo numero: ";
+
+    cout << "Ingrese el segundo numero: ";
     cin >> num2;
 
     switch (operador) {
@@ -28,14 +29,14 @@ int main() {
             cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
             break;
         case '/':
-            if (num2 != 0) {
-                cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+            if (num2 == 0) {
+                cout << "Error: No se puede dividir entre cero." << endl;
             } else {
-                cout << "Error: division entre cero." << endl;
+                cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
             }
             break;
         default:
-            cout << "Operador no valido: '" << operador << "'" << endl;
+            cout << "Operador no valido." << endl;
     }
 
     return 0;
