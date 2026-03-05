@@ -44,5 +44,32 @@ int main() {
         p++; // avanzar al siguiente elemento
     }
 
+    // === Actualizar un elemento específico del arreglo con punteros ===
+    cout << "\n=== Actualizar un elemento con puntero ===" << endl;
+    int indice;
+    int nuevoValor;
+
+    cout << "Ingrese el indice del elemento a actualizar (0-4): ";
+    cin >> indice;
+
+    if (indice >= 0 && indice < 5) {
+        cout << "Valor actual en numeros[" << indice << "] = " << *(ptr + indice) << endl;
+
+        cout << "Ingrese el nuevo valor: ";
+        cin >> nuevoValor;
+
+        *(ptr + indice) = nuevoValor; // actualizar el elemento usando el puntero
+
+        cout << "Valor actualizado en numeros[" << indice << "] = " << *(ptr + indice) << endl;
+
+        // Mostrar el arreglo completo después de la actualización
+        cout << "\nArreglo despues de la actualizacion:" << endl;
+        for (int i = 0; i < 5; i++) {
+            cout << "numeros[" << i << "] = " << *(ptr + i) << endl;
+        }
+    } else {
+        cout << "Indice fuera de rango." << endl;
+    }
+
     return 0;
 }
